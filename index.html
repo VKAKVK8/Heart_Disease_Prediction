@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> Heart Disease Prediction! 👽</title>
+  <link rel="stylesheet" href="{{url_for('static', filename = '/css/style.css')}}">
+</head>
+
+<body>
+ <div class="grid">
+    <p>Kindly fill the required details.</p>
+  <div class="box">
+     <form action="{{url_for('predict')}}"method="post">
+          <label for = "Age">Age : </label><br>
+          <input type="number" id = "Age" name="Age" placeholder="years" required="required" min="1" max="200" /><br>
+          <label for = "Sex">Gender :  
+          </label><br>
+          <select name = "Sex" id = "Sex"><br>
+            <option value = "Select" selected>Select</option>
+            <option value = 1>
+               Male
+            </option>
+            <option value = 0>
+               Female
+            </option>
+          </select><br>
+          <label for = "ChestPainType">Chest Pain Type :  
+          </label><br>
+          <select name = "ChestPainType" id = "ChestPainType">
+            <option value = "Select" selected>Select</option>
+            <option value = 1>
+               ATA
+            </option>
+            <option value = 2>
+               NAP
+            </option>
+            <option value = 3>
+               ASY
+            </option>
+            <option value = 0>
+               TA
+            </option>
+          </select><br>
+          <label for = "RestingBP">Resting Blood Pressure : </label><br>
+          <input type="number" id = "RestingBP" name="RestingBP" placeholder = "RestingBP" required="required" /><br>
+          <label for = "Cholesterol">Cholesterol : </label><br>
+          <input type="number" id = "Cholesterol" name="Cholesterol" placeholder = "Cholesterol" required="required" /><br>
+          <label for = "FastingBS">Fasting Blood Sugar :  </label><br>
+          <select name = "FastingBS" id = "FastingBS">
+            <option value = "Select" selected>Select</option>
+            <option value = 0>Normal</option>
+            <option value = 1>Diabetic</option>
+          </select><br>
+          <label for = "RestingECG">Resting ECG : </label><br>
+          <select name = "RestingECG" id = "RestingECG">
+            <option value = "Select" selected>Select</option>
+            <option value = 1>Normal</option>
+            <option value = 2>ST</option>
+            <option value = 0>LVH</option>
+          </select><br>
+          <label for = "MaxHR">Maximum Heart Rate : </label><br>
+          <input type="number" id = "MaxHR" name="MaxHR" placeholder = "Maximum Heart Rate" required="required" /><br>
+          <label for = "ExerciseAngina">Exercise Angina : </label><br>
+          <select name = "ExerciseAngina" id = "ExerciseAngina">
+            <option value = "Select" selected>Select</option>
+            <option value = 1>Yes</option>
+            <option value = 0>No</option>
+          </select><br>
+          <label for = "ST_Slope">ST Slope : </label><br>
+          <select name = "ST_Slope" id = "ST_Slope">
+            <option value = "Select" selected>Select</option>
+            <option value = 2>Up</option>
+            <option value = 1>Flat</option>
+            <option value = 0>Down</option>
+          </select><br>
+          <button type="Submit" class="btn">Check my health</button>
+    </form>
+   {{ prediction_text }}
+
+ </div>
+</div>
+
+</body>
+</html>
